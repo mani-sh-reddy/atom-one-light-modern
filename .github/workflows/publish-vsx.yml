@@ -1,4 +1,4 @@
-name: Create release and Publish
+name: Create Release and Publish
 on:
   workflow_dispatch:
 
@@ -35,6 +35,10 @@ jobs:
           npm version patch -m "Updated to v%s"
           # Push the commit and tag back to the repository
           git push origin main --tags
+          # Extract the new version number
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "new_version=$NEW_VERSION" >> $GITHUB_ENV
+          echo "New version: $NEW_VERSION"
 
       - name: Publish VSIX to Marketplace
         run: vsce publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}
