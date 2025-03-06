@@ -39,7 +39,6 @@ jobs:
 
       - name: Pull & Push to repository
         run: |
-          git pull
           git push origin main --tags
 
       - name: Publish
