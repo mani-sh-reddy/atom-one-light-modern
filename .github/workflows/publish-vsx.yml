@@ -1,7 +1,5 @@
-name: Increment & Publish VSX
+name: Create release and Publish
 on:
-  release:
-    types: [released]
   workflow_dispatch:
 
 jobs:
@@ -40,3 +38,12 @@ jobs:
 
       - name: Publish VSIX to Marketplace
         run: vsce publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.updated_npm_version.outputs.new_version }}
+          generate_release_notes: true
+          make_latest: true
+          files: |
+            *.vsix
