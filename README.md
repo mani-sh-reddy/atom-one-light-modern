@@ -1,6 +1,8 @@
 # Atom One Light Modern
 
-An update on the Atom One Light theme for more recent versions of Visual Studio Code.
+A modern version of the Atom One Light theme.
+
+![screenshot](./screenshot.png)
 
 ## Installation
 
@@ -21,8 +23,7 @@ To activate the theme:
 
 1. Open the Command Palette `Ctrl+Shift+P or Cmd+Shift+P on macOS`.
 2. Type and select Preferences: Color Theme.
-3. Choose Atom One Light Modern from the available themes.
-
+3. Choose _Atom One Light Modern_ from the available themes.
 
 ## Contributing
 
