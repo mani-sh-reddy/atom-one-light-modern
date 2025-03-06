@@ -37,7 +37,7 @@ jobs:
           git push origin main
           git push origin "$NEW_VERSION_V"
           echo "new_version=$NEW_VERSION_V" >> $GITHUB_ENV
-          echo "::set-output name=new_version::$NEW_VERSION_V"
+          echo "{name}={value}" >> $NEW_VERSION_V
           echo "New version: $NEW_VERSION_V"
 
       - name: Publish VSIX to Marketplace
