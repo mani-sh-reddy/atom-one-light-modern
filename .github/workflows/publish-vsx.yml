@@ -1,0 +1,46 @@
+name: Increment & Publish VSX
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install the dependencies
+        run: npm i
+
+      - name: Install vsce
+        run: npm i -g vsce
+
+      - name: Setup git - user email
+        run: git config user.email "${{ secrets.USER_EMAIL }}"
+
+      - name: Setup git - user name
+        run: git config user.name "Mani Reddy"
+
+      - name: Install vsce
+        run: npm i -g vsce
+
+      - name: Patch
+        id: updated_npm_version
+        run: |
+          npm version patch -m "Updated to v%s"
+
+      - name: Pull & Push to repository
+        run: |
+          git pull
+          git push origin main --tags
+
+      - name: Publish
+        run: vsce publish -p ${{ secrets.VS_MARKETPLACE_TOKEN }}
