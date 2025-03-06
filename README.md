@@ -14,7 +14,7 @@ A modern version of the Atom One Light theme.
 Or, install it directly via the command line:
 
 ```bash
-code --install-extension atom-one-light-modern
+code --install-extension mani-sh-reddy.atom-one-light-modern
 ```
 
 ## Usage
