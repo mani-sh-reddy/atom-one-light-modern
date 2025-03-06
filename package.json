@@ -1,0 +1,46 @@
+{
+  "name": "atom-one-light-modern",
+  "displayName": "Atom One Light Modern",
+  "description": "A modern version of the Atom One Light theme.",
+  "version": "1.0.0",
+  "publisher": "mani-sh-reddy",
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#E8E8E8",
+    "theme": "light"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Atom One Light Modern",
+        "uiTheme": "vs",
+        "path": "./themes/atom-one-light-modern.json"
+      }
+    ]
+  },
+  "keywords": [
+    "theme",
+    "atom",
+    "one",
+    "light",
+    "subtle",
+    "modern",
+    "vscode",
+    "editor"
+  ],
+  "homepage": "https://github.com/mani-sh-reddy/atom-one-light-modern",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mani-sh-reddy/atom-one-light-modern"
+  },
+  "bugs": {
+    "url": "https://github.com/mani-sh-reddy/atom-one-light-modern/issues"
+  },
+  "icon": "icon.png"
+}
